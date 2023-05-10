@@ -3,7 +3,47 @@ guid: afb517c87ce11134b95bfe8c471be96c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.CeilingTile
+    second: {fileID: 2100000, guid: b09158ae47d10654a80666f178780f96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.CeilingVent
+    second: {fileID: 2100000, guid: 8d33370b5d26a0841abc3ca59406a6ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.Door
+    second: {fileID: 2100000, guid: 027b6f3e20a73c74db8b32bfe92dc8dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.DoorFrame.001
+    second: {fileID: 2100000, guid: 9432092c6bed2e948b7fca16b8728713, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.Walls
+    second: {fileID: 2100000, guid: 76cd5dea2f9bdfc40a90196f3ddc3599, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.WindowSill
+    second: {fileID: 2100000, guid: c96bc455794c34d4aaff03afa5e285a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.ceilingLight
+    second: {fileID: 2100000, guid: 0b168e1df1cdfa54fb4b5d439468856f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.floor
+    second: {fileID: 2100000, guid: f5e7d60b5a1c66c45a585e7dc8c53c63, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
