@@ -7,6 +7,7 @@ EditorBuildSettings:
   m_Scenes: []
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 50ee3d2acd7b8904a8669f350e9503ff, type: 2}
+    com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: db9c928a57725d843846f5bcf7b90651, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 99425d00d212dcc449694f8d7b36bba8, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e298ba5b2229dbc49b89fffacd94cd17, type: 2}
     xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 60cff53885cd1d74e9202d64f4136af6, type: 2}
