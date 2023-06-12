@@ -32,6 +32,7 @@ public class OccupancySensor : Sensor
     private IEnumerator DisplayOccupants()
     {
         yield return new WaitForSeconds(OccupantShowTime);
+        yield return new WaitForSeconds(OccupantHideTime);
     }
 
     public override string GetTextReadout()
