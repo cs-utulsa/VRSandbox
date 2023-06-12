@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(XRBaseInteractable))]
+[RequireComponent(typeof(XRSimpleInteractable))]
 public class Room : MonoBehaviour
 {
     /// <summary>
@@ -24,6 +24,11 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
+        if(RoomCollider == null)
+        {
+            RoomCollider = GetComponent<Collider>();
+        }
+
         _roomInteractable = GetComponent<XRBaseInteractable>();
 
         _roomInteractable.selectEntered.AddListener(RoomSelected);
@@ -37,7 +42,7 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SensorTextCanvas.gameObject.SetActive(false);
+        //SensorTextCanvas.gameObject.SetActive(false);
 
         foreach(Sensor sensor in Sensors)
         {
