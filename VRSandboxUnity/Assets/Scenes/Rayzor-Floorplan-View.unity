@@ -237,6 +237,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &118585827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +567,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &204301083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,6 +772,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &207280311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1103,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &252851696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,6 +1356,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &261887078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,6 +1770,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &328092165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,6 +2013,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &360463314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2218,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &416927338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2293,11 +2309,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &418699547 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5258004325739742056, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-  m_PrefabInstance: {fileID: 287529926161077667}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &507255281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2423,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &507255287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2885,6 +2898,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &551407280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3088,6 +3103,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &561475703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3388,6 +3405,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &626046677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,6 +3610,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &680835213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3799,6 +3820,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &699152399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4002,6 +4025,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &731590620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4205,6 +4230,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &732885580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4408,6 +4435,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &745234079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4611,6 +4640,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &837618282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4911,6 +4942,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &965476657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5216,6 +5249,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1023298501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5419,6 +5454,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1047840560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,6 +5552,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3127728407712097246, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Id
+      value: 7ad31d3f-38a7-4fcc-89d6-7a1a8de73cee
+      objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5698,6 +5739,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1081717386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5901,6 +5944,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1082963237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6202,6 +6247,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1149164621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6415,6 +6462,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1302620818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6643,6 +6692,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 1318205315}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1318205317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6896,6 +6947,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1337589216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7099,6 +7152,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1372064965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7400,6 +7455,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1396205492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7603,6 +7660,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1463281912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7806,6 +7865,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1507871708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8052,6 +8113,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1541717086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8443,6 +8506,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1574838352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8646,6 +8711,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1582149228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8880,6 +8947,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1681544339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9083,6 +9152,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1755650672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9216,9 +9287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d6fa75923527d47be616b1165f0df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomInteractionUIPrefab: {fileID: 0}
-  OccupantPrefab: {fileID: 0}
-  TabPrefab: {fileID: 0}
+  OccupantPrefab: {fileID: 5973902559109748386, guid: b17fa99b4894ee94d8034d6e535e8411, type: 3}
+  TabPrefab: {fileID: 7778064653550518652, guid: 53b4dca2142613f47936d29313f62330, type: 3}
 --- !u!1 &1847341762
 GameObject:
   m_ObjectHideFlags: 0
@@ -9423,6 +9493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71a872bc97913445b93e5d55e334130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultMode: 0
 --- !u!114 &1847341768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9571,6 +9642,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1857084099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9904,6 +9977,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1892395384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10107,6 +10182,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1894833609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10346,6 +10423,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &1971721084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10646,6 +10725,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &2098694881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10849,6 +10930,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &2106637521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11052,6 +11135,8 @@ MonoBehaviour:
   RoomCollider: {fileID: 0}
   Sensors: []
   SensorTextCanvas: {fileID: 0}
+  RoomViewScene:
+    m_Handle: 0
 --- !u!114 &2139829159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11148,58 +11233,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 340514178}
     m_Modifications:
-    - target: {fileID: 474398054420461451, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_Name
-      value: Actions Tab
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158301998297225063, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158301998297225063, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158301998297225063, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 187.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158301998297225063, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 291.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158301998297225063, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3344357119790884041, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_Name
-      value: Sensors Tab
-      objectReference: {fileID: 0}
-    - target: {fileID: 3823338019062318117, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3823338019062318117, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3823338019062318117, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 187.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3823338019062318117, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 98.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3823338019062318117, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141654278345163319, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: TabWindow
-      value: 
-      objectReference: {fileID: 1166634776}
     - target: {fileID: 7656323316315868557, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11284,50 +11317,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8045186793836941685, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: TabWindow
-      value: 
-      objectReference: {fileID: 418699547}
     - target: {fileID: 8777230856921296669, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
       propertyPath: m_Name
-      value: Room Inspector Window
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777230856921296669, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Room UI Window
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
 --- !u!224 &287529926161077668 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7656323316315868557, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-  m_PrefabInstance: {fileID: 287529926161077667}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &287529926161077669 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8045186793836941685, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-  m_PrefabInstance: {fileID: 287529926161077667}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63147c2c790368a4e9a8516b092bfe65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &287529926161077670 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5141654278345163319, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
-  m_PrefabInstance: {fileID: 287529926161077667}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63147c2c790368a4e9a8516b092bfe65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &287529926161077671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6711992836153705728, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
   m_PrefabInstance: {fileID: 287529926161077667}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &287529926161077672 stripped
@@ -11341,15 +11339,16 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287529926161077671}
+  m_GameObject: {fileID: 287529926161077672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7f4cd35bfa6094bb954405f142bfae, type: 3}
+  m_Script: {fileID: 11500000, guid: 821de048851dac84cb302cabe8c31aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tabs:
-  - {fileID: 287529926161077670}
-  - {fileID: 287529926161077669}
+  SensorsTabGroup: {fileID: 0}
+  ActionsButtonGroup: {fileID: 1166634776}
+  LoadRoomViewButton: {fileID: 0}
+  ActionsWindowText: {fileID: 0}
 --- !u!1001 &3507434802202926493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11737,7 +11736,7 @@ RectTransform:
   m_GameObject: {fileID: 6341441389011467331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.947}
-  m_LocalScale: {x: 0.0031390002, y: 0.0031390002, z: 3.139}
+  m_LocalScale: {x: 0.0031390002, y: 0.0031390002, z: 0.003139}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6341441389792862329}
@@ -11765,6 +11764,11 @@ GameObject:
   - component: {fileID: 6341441389011467329}
   - component: {fileID: 6341441389011467334}
   - component: {fileID: 6341441389011467336}
+  - component: {fileID: 6341441389011467341}
+  - component: {fileID: 6341441389011467340}
+  - component: {fileID: 6341441389011467339}
+  - component: {fileID: 6341441389011467338}
+  - component: {fileID: 6341441389011467337}
   m_Layer: 5
   m_Name: Inspector Canvas
   m_TagString: Untagged
@@ -11801,7 +11805,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1510522686}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -11824,7 +11828,208 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0257b8c3ef3c4a24ebf0a3dbeda29f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedRoomsTabGroup: {fileID: 0}
+  RoomUIWindowPrefab: {fileID: 8777230856921296669, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
+  AllRoomsUIWindowPrefab: {fileID: 8777230856921296669, guid: 1e57f65c6dd84854797e1d8e20669568, type: 3}
+  SelectedRoomsTabGroup: {fileID: 6341441389792862332}
+  UIWindowGroup: {fileID: 340514177}
+--- !u!54 &6341441389011467337
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341441389011467331}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6341441389011467338
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341441389011467331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 400, y: 400, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6341441389011467339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341441389011467331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PermittedDisplacementAxes: 7
+  m_ConstrainedAxisDisplacementMode: 1
+  m_TwoHandedRotationMode: 1
+  m_AllowTwoHandedScaling: 0
+  m_ThresholdMoveRatioForScale: 0.1
+  m_ClampScaling: 1
+  m_MinimumScaleRatio: 0.25
+  m_MaximumScaleRatio: 2
+  m_ScaleMultiplier: 0.25
+--- !u!114 &6341441389011467340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341441389011467331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 1059314444}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 0}
+  m_UseDynamicAttach: 0
+  m_MatchAttachPosition: 1
+  m_MatchAttachRotation: 1
+  m_SnapToColliderVolume: 1
+  m_ReinitializeDynamicAttachEverySingleGrab: 1
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 2
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 0
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 0
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 0
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_AttachPointCompatibilityMode: 0
+  m_StartingSingleGrabTransformers: []
+  m_StartingMultipleGrabTransformers: []
+  m_AddDefaultGrabTransformers: 1
+--- !u!114 &6341441389011467341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341441389011467331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71a872bc97913445b93e5d55e334130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultMode: 0
 --- !u!224 &6341441389792862329
 RectTransform:
   m_ObjectHideFlags: 0

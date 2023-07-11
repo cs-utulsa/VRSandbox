@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GlobalPrefabContainer : Singleton<GlobalPrefabContainer>
 {
-    public GameObject RoomInteractionUIPrefab;
     public GameObject OccupantPrefab;
     public GameObject TabPrefab;
 }

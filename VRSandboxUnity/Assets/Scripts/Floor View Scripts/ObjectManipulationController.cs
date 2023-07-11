@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
-public class FloorViewController : MonoBehaviour
+public class ObjectManipulationController : MonoBehaviour
 {
     public enum FloorViewModes
     {
@@ -13,6 +13,8 @@ public class FloorViewController : MonoBehaviour
         Rotate,
         Scale
     }
+
+    public FloorViewModes DefaultMode;
 
     private FloorViewModes _currentMode;
     private XRGrabInteractable _grabInteractable;
@@ -34,7 +36,7 @@ public class FloorViewController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetMode((int)FloorViewModes.Interact);
+        SetMode((int)DefaultMode);
     }
 
     // Update is called once per frame

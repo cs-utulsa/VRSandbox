@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class FloorViewInspectorWindow : MonoBehaviour
 {
+    public GameObject RoomUIWindowPrefab;
+    public GameObject AllRoomsUIWindowPrefab;
+
     public TabGroup SelectedRoomsTabGroup;
+    public GameObject UIWindowGroup;
 
     private List<Room> _selectedRooms;
     private Tab _allRoomsTab;
@@ -23,12 +27,17 @@ public class FloorViewInspectorWindow : MonoBehaviour
     public void RoomSelected(Room room)
     {
         _selectedRooms.Add(room);
-        SelectedRoomsTabGroup.AddTab(room.gameObject.name, null);
 
-        if(_selectedRooms.Count > 1)
+        GameObject newRoomUI = Instantiate(RoomUIWindowPrefab, UIWindowGroup.transform);
+        newRoomUI.SetActive(false);
+
+        SelectedRoomsTabGroup.AddTab(room.gameObject.name, newRoomUI);
+
+        /*if(_selectedRooms.Count > 1)
         {
-            _allRoomsTab = SelectedRoomsTabGroup.AddTab("Overall", null, true);
-        }
+            GameObject allRoomsUI = Instantiate(AllRoomsUIWindowPrefab, UIWindowGroup.transform);
+            _allRoomsTab = SelectedRoomsTabGroup.AddTab("Overall", allRoomsUI, true);
+        }*/
     }
 
     public void RoomDeselected(Room room)
@@ -36,9 +45,9 @@ public class FloorViewInspectorWindow : MonoBehaviour
         _selectedRooms.Remove(room);
         SelectedRoomsTabGroup.RemoveTab(null);
 
-        if(_selectedRooms.Count <= 1)
+        /*if(_selectedRooms.Count <= 1)
         {
             SelectedRoomsTabGroup.RemoveTab(_allRoomsTab);
-        }
+        }*/
     }
 }

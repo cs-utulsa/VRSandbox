@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRSimpleInteractable))]
@@ -22,6 +23,8 @@ public class Room : MonoBehaviour
 
     public Canvas SensorTextCanvas;
 
+    public Scene RoomViewScene;
+
     private XRBaseInteractable _roomInteractable;
     private Material _roomMaterial;
     private bool _hovered, _selected;
@@ -38,14 +41,10 @@ public class Room : MonoBehaviour
         _roomInteractable = GetComponent<XRBaseInteractable>();
 
         _roomInteractable.selectEntered.AddListener(RoomSelected);
-        //_roomInteractable.selectExited.AddListener(RoomUnselected);
         _roomInteractable.hoverEntered.AddListener(RoomHovered);
         _roomInteractable.hoverExited.AddListener(RoomUnhovered);
 
         _roomMaterial = GetComponent<MeshRenderer>().material;
-
-        //_interactionMenu = Instantiate(GlobalPrefabContainer.instance.RoomInteractionUIPrefab, transform);
-        //_interactionMenu.SetActive(false);
     }
 
     // Start is called before the first frame update
