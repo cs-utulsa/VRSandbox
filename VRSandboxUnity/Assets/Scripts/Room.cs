@@ -32,7 +32,7 @@ public class Room : MonoBehaviour
         _roomInteractable = GetComponent<XRBaseInteractable>();
 
         _roomInteractable.selectEntered.AddListener(RoomSelected);
-        _roomInteractable.selectExited.AddListener(RoomUnselected);
+        //_roomInteractable.selectExited.AddListener(RoomUnselected);
         _roomInteractable.hoverEntered.AddListener(RoomHovered);
         _roomInteractable.hoverExited.AddListener(RoomUnhovered);
 
@@ -55,7 +55,7 @@ public class Room : MonoBehaviour
 
     private void RoomSelected(SelectEnterEventArgs args)
     {
-        _selected = true;
+        _selected = !_selected;
         SetColor();
     }
 
