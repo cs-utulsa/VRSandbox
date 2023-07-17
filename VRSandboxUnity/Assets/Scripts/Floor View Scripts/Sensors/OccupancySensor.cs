@@ -7,7 +7,7 @@ public class OccupancySensor : Sensor
     public int currentOccupancy = 0;
     public int maxOccupancy;
 
-    public GameObject OccupantVisualPrefab;
+    private GameObject OccupantVisualPrefab;
 
     public float OccupantShowTime;
     public float OccupantHideTime;
@@ -15,7 +15,7 @@ public class OccupancySensor : Sensor
 
     protected override void InitializeSensorOverride()
     {
-        
+        OccupantVisualPrefab = GlobalPrefabContainer.instance.OccupantPrefab;
     }
 
 
