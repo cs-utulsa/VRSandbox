@@ -50,14 +50,6 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SensorTextCanvas.gameObject.SetActive(false);
-
-        foreach(Sensor sensor in Sensors)
-        {
-            sensor.InitializeSensor(this);
-            sensor.StartDisplayVisual();
-        }
-
         _roomMaterial.color = ColorManager.instance.DefaultRoomColor;
     }
 
