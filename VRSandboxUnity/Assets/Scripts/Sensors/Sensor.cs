@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class Sensor : MqttReceiver
 {
-    /// <summary>
-    /// Type of this sensor
-    /// </summary>
-    public string SensorType;
-    /// <summary>
-    /// Unique Identifier of this sensor
-    /// </summary>
-    public string SensorName;
+    [Header("Sensor Data")]
+    public SensorData SensorDataObject;
 
     /// <summary>
     /// Handle used to subscribe to this sensor
@@ -20,7 +14,7 @@ public class Sensor : MqttReceiver
     {
         get
         {
-            return $"{SensorType}/{SensorName}";
+            return $"{SensorDataObject.SensorType}/{SensorDataObject.SensorName}";
         }
     }
 
@@ -41,7 +35,10 @@ public class Sensor : MqttReceiver
         base.Update();
     }
 
-    protected virtual void ProcessSensorMessage(string message) {}
+    protected virtual void ProcessSensorMessage(string message)
+    {
+        SensorDataObject.SensorDataValues.Add(message);
+    }
 
     /// <summary>
     /// Initializes the Sensor

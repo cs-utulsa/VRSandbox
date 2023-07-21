@@ -273,9 +273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: 40
-  m_MinHeight: -1
+  m_MinHeight: 40
   m_PreferredWidth: 70
-  m_PreferredHeight: -1
+  m_PreferredHeight: 70
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -291,3 +291,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63147c2c790368a4e9a8516b092bfe65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TabWindow: {fileID: 0}

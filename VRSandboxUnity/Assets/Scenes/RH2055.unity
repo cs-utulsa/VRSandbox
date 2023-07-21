@@ -331,8 +331,7 @@ MonoBehaviour:
   autoConnect: 1
   mqttUserName: 
   mqttPassword: 
-  SensorType: temperature
-  SensorName: 
+  SensorDataObject: {fileID: 11400000, guid: 7748f4b615047114083908fb9c8a5294, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
