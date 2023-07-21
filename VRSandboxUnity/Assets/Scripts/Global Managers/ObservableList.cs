@@ -70,4 +70,15 @@ public class ObservableList<T>
         _value.RemoveAll(match);
         ListUpdated?.Invoke();
     }
+
+    public T[] ToArray()
+    {
+        return _value.ToArray();
+    }
+
+    public List<T> ToList()
+    {
+        return _value;
+    }
+
 }

@@ -2750,7 +2750,7 @@ PrefabInstance:
     - target: {fileID: 814465328586100306, guid: 97211990d0917a34080dc4282bd2ab8f, type: 3}
       propertyPath: TabWindow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5064205256784257787}
     - target: {fileID: 1678935775199401119, guid: 97211990d0917a34080dc4282bd2ab8f, type: 3}
       propertyPath: TabWindow
       value: 
@@ -2973,6 +2973,11 @@ GameObject:
 --- !u!1 &3445437897070594441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2198006102370565610, guid: 97211990d0917a34080dc4282bd2ab8f, type: 3}
+  m_PrefabInstance: {fileID: 3553416404738765923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5064205256784257787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581590111151806104, guid: 97211990d0917a34080dc4282bd2ab8f, type: 3}
   m_PrefabInstance: {fileID: 3553416404738765923}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &5911291894637833926 stripped

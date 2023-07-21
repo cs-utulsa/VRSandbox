@@ -122,12 +122,12 @@ namespace M2MqttUnity.Examples
 
         protected override void SubscribeTopics()
         {
-            client.Subscribe(new string[] { "M2MQTT_Unity/test" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "temperature/LEM5" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
         }
 
         protected override void UnsubscribeTopics()
         {
-            client.Unsubscribe(new string[] { "M2MQTT_Unity/test" });
+            client.Unsubscribe(new string[] { "temperature/LEM5" });
         }
 
         protected override void OnConnectionFailed(string errorMessage)
@@ -204,7 +204,8 @@ namespace M2MqttUnity.Examples
         {
             string msg = System.Text.Encoding.UTF8.GetString(message);
             Debug.Log("Received: " + msg);
-            StoreMessage(msg);
+            Debug.Log("From Topic: " + topic);
+            StoreMessage($"{topic}: {msg}");
             if (topic == "M2MQTT_Unity/test")
             {
                 if (autoTest)
