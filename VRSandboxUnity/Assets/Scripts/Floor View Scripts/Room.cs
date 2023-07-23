@@ -16,13 +16,6 @@ public class Room : MonoBehaviour
     /// </summary>
     public Collider RoomCollider;
 
-    /// <summary>
-    /// All sensors currently used by this room
-    /// </summary>
-    public Sensor[] Sensors;
-
-    public Canvas SensorTextCanvas;
-
     public Scene RoomViewScene;
 
     private XRBaseInteractable _roomInteractable;
@@ -79,11 +72,6 @@ public class Room : MonoBehaviour
     {
         _hovered = false;
         SetColor();
-    }
-
-    private void DisplaySensorText()
-    {
-
     }
 
     private void SetColor()

@@ -25,7 +25,7 @@ public class Example : MonoBehaviour
         MyRandom = new System.Random();
         XValues = new float[DataPoints];
         Y1Values = new float[DataPoints];
-        Y2Values = new float[DataPoints-2];
+        Y2Values = new float[DataPoints];
         MyColors[0] = Color.white;
         MyColors[1] = Color.blue;
 

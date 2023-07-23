@@ -237,7 +237,6 @@ GameObject:
   - component: {fileID: 509620216}
   - component: {fileID: 509620215}
   - component: {fileID: 509620218}
-  - component: {fileID: 509620219}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -281,6 +280,11 @@ MonoBehaviour:
   Ar: 0
   TextColor: {r: 1, g: 1, b: 1, a: 1}
   FontSize: 12
+  PlotTitle: Plot
+  XAxisLabel: X Axis
+  YAxisLabel: Y Axis
+  XAxisNumberCount: 10
+  YAxisNumberCount: 5
   MyPlotType: 0
   ShowWarnings: 1
   AxesVisible: 1
@@ -332,49 +336,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 509620213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75491c91a1393dc4b90c8741678d72bb, type: 3}
+  m_Script: {fileID: 11500000, guid: cb0640d11aab7a347bf13008e8b87d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlotReference: {fileID: 509620215}
-  BGColor: {r: 0.254717, g: 0.2268423, b: 0.2268423, a: 1}
-  TextColor: {r: 1, g: 0.53708243, b: 0, a: 1}
-  PlotColor: {r: 0.6487, g: 1, b: 0, a: 1}
-  PlotResolution: {x: 300, y: 300}
---- !u!114 &509620219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509620213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09be69411189bdb4299f6cf2fba60d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xValues:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - 10
-  yValues:
-  - 30.6
-  - 30.7
-  - 30.9
-  - 31.4
-  - 32
-  - 31.9
-  - 31.7
-  - 31.2
-  - 30.6
-  - 30.4
-  dataGraphWindow: {fileID: 509620218}
+  PlotExample: 0
+  DataPoints: 100
 --- !u!1 &693522858
 GameObject:
   m_ObjectHideFlags: 0

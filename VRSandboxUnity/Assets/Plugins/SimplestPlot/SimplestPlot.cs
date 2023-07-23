@@ -36,8 +36,6 @@ public class SimplestPlot : MonoBehaviour
     private Texture2D PlotTexture;
     private Image PlotImage;
     private Vector2 TextureResolution = new Vector2(100, 100);
-    private float StartPosX;
-    private float StartPosY;
 
     // Global Variables
     public Color BackGroundColor = new Color(0, 0, 0, 0);
@@ -46,9 +44,14 @@ public class SimplestPlot : MonoBehaviour
     private Color[] BackGroundArray;
     public Color TextColor = new Color(1, 1, 1, 1);
     public int FontSize = 12;
+    public string PlotTitle = "Plot";
+    public string XAxisLabel = "X Axis";
+    public string YAxisLabel = "Y Axis";
+    public int XAxisNumberCount = 10;
+    public int YAxisNumberCount = 5;
     public PlotType MyPlotType = PlotType.TimeSeries;
     public bool ShowWarnings = true;
-    public bool AxesVisible = true;
+    public bool AxisVisible = true;
 
     // PLot variables
     public List<SeriesClass> SeriesPlotY;
@@ -57,11 +60,25 @@ public class SimplestPlot : MonoBehaviour
     private List<float[]> ActualDistribution;
     public List<PhaseSpaceClass> PhaseSpacePlot;
 
-    private Text PlotYMaxText;
-    private Text PlotYMinText;
-    private Text PlotXMaxText;
-    private Text PlotXMinText;
+    //Test References
     private Text WarningText;
+    private Text[] PlotYValueTexts;
+    private Text[] PlotXValueTexts;
+    private Text PlotTitleText;
+    private Text PlotYTitleText;
+    private Text PlotXTitleText;
+
+    //Placement Vectors
+    Vector2 MinXAnchor_MinValue = new Vector2(0.1f, 0.05f);
+    Vector2 MaxXAnchor_MinValue = new Vector2(0.15f, 0.1f);
+    Vector2 MinXAnchor_MaxValue = new Vector2(0.9f, 0.05f);
+    Vector2 MaxXAnchor_MaxValue = new Vector2(0.95f, 0.1f);
+
+    Vector2 MinYAnchor_MinValue = new Vector2(0.05f, 0.1f);
+    Vector2 MaxYAnchor_MinValue = new Vector2(0.1f, 0.15f);
+    Vector2 MinYAnchor_MaxValue = new Vector2(0.05f, 0.9f);
+    Vector2 MaxYAnchor_MaxValue = new Vector2(0.1f, 0.95f);
+
     // Use this for initialization
     public void Awake()
     {
@@ -75,7 +92,7 @@ public class SimplestPlot : MonoBehaviour
 
         SetResolution(TextureResolution);
 
-        SetupText();
+        InitializeTextObjects();
     }
 
     // Getters Setters
@@ -84,8 +101,6 @@ public class SimplestPlot : MonoBehaviour
         TextureResolution = NewResolution;
         PlotTexture = new Texture2D((int)TextureResolution.x, (int)TextureResolution.y);
         PlotImage.GetComponent<Image>().sprite = Sprite.Create(PlotTexture, new Rect(0, 0, TextureResolution.x, TextureResolution.y), new Vector2(0.0f, 0.0f));
-        StartPosX = TextureResolution.x * 0.05f;
-        StartPosY = TextureResolution.y * 0.05f;
     }
     public Vector2 GetResolution() { return TextureResolution; }
 
@@ -100,12 +115,17 @@ public class SimplestPlot : MonoBehaviour
         if (ShowWarnings) WarningText.text = ConsistencyCheck();
         else WarningText.text = "";
 
+        if(AxisVisible)
+        {
+            DrawAxis();
+        }
+
         if (MyPlotType == PlotType.TimeSeries)
         {
             MinMaxOfPlotsX = FindMinMaxSeries(true);
             MinMaxOfPlotsY = FindMinMaxSeries(false);
-            ScaleX = (float)(PlotTexture.width - 2 * StartPosX) / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
-            ScaleY = (float)(PlotTexture.height - 2 * StartPosY) / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
+            ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
+            ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
             for (int Cnt = 0; Cnt < SeriesPlotY.Count; Cnt++)
                 DrawTimeSeriesPlot(ScaleX, ScaleY, SeriesPlotX, MinMaxOfPlotsX[0], SeriesPlotY[Cnt].YValues, MinMaxOfPlotsY[0], SeriesPlotY[Cnt].MyColor);
         }
@@ -113,8 +133,8 @@ public class SimplestPlot : MonoBehaviour
         {
             MinMaxOfPlotsX = FindMinMaxOfDistribution();
             MinMaxOfPlotsY = PrepareDistribution(MinMaxOfPlotsX);
-            ScaleX = (float)(PlotTexture.width - 2 * StartPosX) / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
-            ScaleY = (float)(PlotTexture.height - 2 * StartPosY) / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
+            ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
+            ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
             for (int Cnt = 0; Cnt < DistributionPlot.Count; Cnt++)
             {
                 float BinDimention = (MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]) / DistributionPlot[Cnt].NumberOfBins;
@@ -125,8 +145,8 @@ public class SimplestPlot : MonoBehaviour
         {
             MinMaxOfPlotsX = FindMinMaxPhase(true);
             MinMaxOfPlotsY = FindMinMaxPhase(false);
-            ScaleX = (float)(PlotTexture.width - 2 * StartPosX) / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
-            ScaleY = (float)(PlotTexture.height - 2 * StartPosY) / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
+            ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
+            ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
             for (int Cnt = 0; Cnt < PhaseSpacePlot.Count; Cnt++)
                 DrawPhaseSpacePlot(ScaleX, ScaleY, PhaseSpacePlot[Cnt].XValues, MinMaxOfPlotsX[0], PhaseSpacePlot[Cnt].YValues, MinMaxOfPlotsY[0], PhaseSpacePlot[Cnt].MyColor);
         }
@@ -142,29 +162,29 @@ public class SimplestPlot : MonoBehaviour
     {
         int FirstX, FirstY, SecondX, SecondY;
         bool NoXValues = XPoints == null || XPoints.Length == 0;
-        SecondX = (int)StartPosX;
-        SecondY = (int)((YPoints[0] - MinY) * PlotScaleY + StartPosY);
+        SecondX = 0;
+        SecondY = (int)((YPoints[0] - MinY) * PlotScaleY);
 
         for (int Cnt = 1; Cnt < YPoints.Length; Cnt++)
         {
             FirstX = SecondX;
             FirstY = SecondY;
-            SecondX = NoXValues ? (int)(Cnt * PlotScaleX + StartPosX) : (int)((XPoints[Cnt] - MinX) * PlotScaleX + StartPosX);
-            SecondY = (int)((YPoints[Cnt] - MinY) * PlotScaleY + StartPosY);
+            SecondX = NoXValues ? (int)(Cnt * PlotScaleX) : (int)((XPoints[Cnt] - MinX) * PlotScaleX);
+            SecondY = (int)((YPoints[Cnt] - MinY) * PlotScaleY);
             DrawLine(PlotTexture, FirstX, FirstY, SecondX, SecondY, LineColor);
         }
     }
     private void DrawDistributionPlot(float PlotScaleX, float PlotScaleY, float BinDimention, float MinY, float[] YPoints, Color LineColor)
     {
         int FirstX, FirstY, SecondX, SecondY;
-        FirstY = (int)StartPosY;
-        SecondX = (int)StartPosX;
+        FirstY = 0;
+        SecondX = 0;
 
         for (int Cnt = 0; Cnt < YPoints.Length; Cnt++)
         {
             //Draw Vertical line
             FirstX = SecondX;
-            SecondY = (int)((YPoints[Cnt] - MinY) * PlotScaleY + StartPosY);
+            SecondY = (int)((YPoints[Cnt] - MinY) * PlotScaleY);
             DrawLine(PlotTexture, FirstX, FirstY, SecondX, SecondY, LineColor);
             //Draw horizontal line
             FirstY = SecondY;
@@ -173,27 +193,59 @@ public class SimplestPlot : MonoBehaviour
         }
         //Draw Last Vertical
         FirstX = SecondX;
-        SecondY = (int)StartPosY;
+        SecondY = 0;
         DrawLine(PlotTexture, FirstX, FirstY, SecondX, SecondY, LineColor);
     }
     private void DrawPhaseSpacePlot(float PlotScaleX, float PlotScaleY, float[] XPoints, float MinX, float[] YPoints, float MinY, Color LineColor)
     {
         int MinPointsNum = Math.Min(XPoints.Length, YPoints.Length);
         int FirstX, FirstY, SecondX, SecondY;
-        SecondX = (int)((XPoints[0] - MinX) * PlotScaleX + StartPosX);
-        SecondY = (int)((YPoints[0] - MinY) * PlotScaleY + StartPosY);
+        SecondX = (int)((XPoints[0] - MinX) * PlotScaleX);
+        SecondY = (int)((YPoints[0] - MinY) * PlotScaleY);
         for (int Cnt = 1; Cnt < MinPointsNum; Cnt++)
         {
             FirstX = SecondX;
             FirstY = SecondY;
-            if (Cnt <= XPoints.Length) SecondX = (int)((XPoints[Cnt] - MinX) * PlotScaleX + StartPosX);
-            if (Cnt <= YPoints.Length) SecondY = (int)((YPoints[Cnt] - MinY) * PlotScaleY + StartPosY);
+            if (Cnt <= XPoints.Length) SecondX = (int)((XPoints[Cnt] - MinX) * PlotScaleX);
+            if (Cnt <= YPoints.Length) SecondY = (int)((YPoints[Cnt] - MinY) * PlotScaleY);
 
             DrawLine(PlotTexture, FirstX, FirstY, SecondX, SecondY, LineColor);
         }
     }
+    
+    private void DrawAxis()
+    {
+        Vector2 TopLeft = new Vector2(0 * TextureResolution.x, 1 * TextureResolution.y);
+        Vector2 TopRight = new Vector2(1 * TextureResolution.x, 1 * TextureResolution.y);
+        Vector2 BotLeft = new Vector2(0 * TextureResolution.x, 0 * TextureResolution.y);
+        Vector2 BotRight = new Vector2(1 * TextureResolution.x, 0 * TextureResolution.y);
+
+        //Left Border
+        DrawLine(PlotTexture, (int)TopLeft.x, (int)TopLeft.y, (int)BotLeft.x, (int)BotLeft.y, TextColor);
+        //Bot Border
+        DrawLine(PlotTexture, (int)BotLeft.x, (int)BotLeft.y, (int)BotRight.x, (int)BotRight.y, TextColor);
+        //Right Border
+        DrawLine(PlotTexture, (int)TopRight.x, (int)TopRight.y, (int)BotRight.x, (int)BotRight.y, TextColor);
+        //Top Border
+        DrawLine(PlotTexture, (int)TopLeft.x, (int)TopLeft.y, (int)TopRight.x, (int)TopRight.y, TextColor);
+    }
+    
     private void DrawLine(Texture2D PlotTexture, int x0, int y0, int x1, int y1, Color LineColor)
     {
+        Vector2 GraphMinCorner = new Vector2(((MaxXAnchor_MinValue.x + MinXAnchor_MinValue.x) / 2), ((MaxYAnchor_MinValue.y + MinYAnchor_MinValue.y) / 2));
+        Vector2 GraphMaxCorner = new Vector2(((MaxXAnchor_MaxValue.x + MinXAnchor_MaxValue.x) / 2), ((MaxYAnchor_MaxValue.y + MinYAnchor_MaxValue.y) / 2));
+
+        Vector2 firstPointPercentage= new Vector2(x0 / TextureResolution.x, y0 / TextureResolution.y);
+        Vector2 secondPointPercentage = new Vector2(x1 / TextureResolution.x, y1 / TextureResolution.y);
+
+        Vector2 firstPointAdjusted = new Vector2(Mathf.Lerp(GraphMinCorner.x, GraphMaxCorner.x, firstPointPercentage.x) * TextureResolution.x, Mathf.Lerp(GraphMinCorner.y, GraphMaxCorner.y, firstPointPercentage.y) * TextureResolution.y);
+        Vector2 secondPointAdjusted = new Vector2(Mathf.Lerp(GraphMinCorner.x, GraphMaxCorner.x, secondPointPercentage.x) * TextureResolution.x, Mathf.Lerp(GraphMinCorner.y, GraphMaxCorner.y, secondPointPercentage.y) * TextureResolution.y);
+
+        x0 = (int)firstPointAdjusted.x;
+        y0 = (int)firstPointAdjusted.y;
+        x1 = (int)secondPointAdjusted.x;
+        y1 = (int)secondPointAdjusted.y;
+
         int dx = 0;
         int dy = 0;
         int sx = 0;
@@ -372,113 +424,111 @@ public class SimplestPlot : MonoBehaviour
     }
     private void UpdateText(float[] MinMaxOfPlotsX, float[] MinMaxOfPlotsY)
     {
-        PlotYMaxText.color = TextColor;
-        PlotYMinText.color = TextColor;
-        PlotXMaxText.color = TextColor;
-        PlotXMinText.color = TextColor;
+        for(int i = 0; i < XAxisNumberCount; i++)
+        {
+            PlotXValueTexts[i].color = TextColor;
+            PlotXValueTexts[i].fontSize = FontSize;
+
+            if (AxisVisible && MinMaxOfPlotsX[1] >= MinMaxOfPlotsX[0])
+            {
+                PlotXValueTexts[i].text = Mathf.Lerp(MinMaxOfPlotsX[0], MinMaxOfPlotsX[1], (float)i / (XAxisNumberCount-1)).ToString("0.00");
+            }
+            else
+            {
+                PlotXValueTexts[i].text = "";
+            }
+        }
+
+        for (int i = 0; i < YAxisNumberCount; i++)
+        {
+            PlotYValueTexts[i].color = TextColor;
+            PlotYValueTexts[i].fontSize = FontSize;
+
+            if (AxisVisible && MinMaxOfPlotsY[1] >= MinMaxOfPlotsY[0])
+            {
+                PlotYValueTexts[i].text = Mathf.Lerp(MinMaxOfPlotsY[0], MinMaxOfPlotsY[1], (float)i / (YAxisNumberCount-1)).ToString("0.00");
+            }
+            else
+            {
+                PlotYValueTexts[i].text = "";
+            }
+        }
+
+        PlotXTitleText.color = TextColor;
+        PlotTitleText.color = TextColor;
+        PlotYTitleText.color = TextColor;
         WarningText.color = TextColor;
 
-        PlotYMaxText.fontSize = FontSize;
-        PlotYMinText.fontSize = FontSize;
-        PlotXMaxText.fontSize = FontSize;
-        PlotXMinText.fontSize = FontSize;
+        PlotXTitleText.fontSize = FontSize;
+        PlotTitleText.fontSize = FontSize;
+        PlotYTitleText.fontSize = FontSize;
         WarningText.fontSize = FontSize;
-
-        if (AxesVisible && MinMaxOfPlotsY[1] < float.MaxValue && MinMaxOfPlotsY[0] > float.MinValue)
-        {
-            if (MinMaxOfPlotsY[1] >= MinMaxOfPlotsY[0])
-            {
-                PlotYMaxText.text = MinMaxOfPlotsY[1].ToString("0.00");
-                PlotYMinText.text = MinMaxOfPlotsY[0].ToString("0.00");
-            }
-            else
-            {
-                PlotYMaxText.text = "";
-                PlotYMinText.text = "";
-            }
-            if (MinMaxOfPlotsX[0] > MinMaxOfPlotsX[1])
-            {
-                PlotXMaxText.text = "";
-                PlotXMinText.text = "";
-            }
-            else
-            {
-                PlotXMaxText.text = MinMaxOfPlotsX[1].ToString("0.00");
-                PlotXMinText.text = MinMaxOfPlotsX[0].ToString("0.00");
-            }
-        }
-        else
-        {
-            PlotYMaxText.text = "";
-            PlotYMinText.text = "";
-            PlotXMaxText.text = "";
-            PlotXMinText.text = "";
-        }
     }
-    private void SetupText()
+    private void InitializeTextObjects()
     {
-        GameObject GOPlotXMinText = new GameObject("XMin", typeof(Text));
-        GameObject GOPlotXMaxText = new GameObject("XMax", typeof(Text));
-        GameObject GOPlotYMinText = new GameObject("YMin", typeof(Text));
-        GameObject GOPlotYMaxText = new GameObject("YMax", typeof(Text));
-        GameObject GOWarningText = new GameObject("Warning", typeof(Text));
-        GOPlotXMinText.transform.SetParent(transform, false);
-        GOPlotXMaxText.transform.SetParent(transform, false);
-        GOPlotYMinText.transform.SetParent(transform, false);
-        GOPlotYMaxText.transform.SetParent(transform, false);
-        GOWarningText.transform.SetParent(transform, false);
-        PlotXMinText = GOPlotXMinText.GetComponent<Text>();
-        PlotXMaxText = GOPlotXMaxText.GetComponent<Text>();
-        PlotYMinText = GOPlotYMinText.GetComponent<Text>();
-        PlotYMaxText = GOPlotYMaxText.GetComponent<Text>();
-        WarningText = GOWarningText.GetComponent<Text>();
+        GameObject TextObject;
 
-        PlotYMaxText.alignment = TextAnchor.MiddleLeft;
-        PlotYMinText.alignment = TextAnchor.MiddleLeft;
-        PlotXMaxText.alignment = TextAnchor.MiddleRight;
-        PlotXMinText.alignment = TextAnchor.MiddleLeft;
-        WarningText.alignment = TextAnchor.MiddleCenter;
+        PlotXValueTexts = new Text[XAxisNumberCount];
+        PlotYValueTexts = new Text[YAxisNumberCount];
 
-        PlotYMaxText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-        PlotYMinText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-        PlotXMaxText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-        PlotXMinText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-        WarningText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
+        for (int i = 0; i < XAxisNumberCount; i++)
+        {
+            Vector2 minAnchor = Vector2.Lerp(MinXAnchor_MinValue, MinXAnchor_MaxValue, (float)i / (XAxisNumberCount-1));
+            Vector2 maxAnchor = Vector2.Lerp(MaxXAnchor_MinValue, MaxXAnchor_MaxValue, (float)i / (XAxisNumberCount-1));
 
-        PlotYMaxText.color = TextColor;
-        PlotYMinText.color = TextColor;
-        PlotXMaxText.color = TextColor;
-        PlotXMinText.color = TextColor;
-        WarningText.color = TextColor;
+            TextObject = new GameObject($"X Axis Value {i}", typeof(Text));
+            TextObject.transform.SetParent(transform, false);
+            PlotXValueTexts[i] = TextObject.GetComponent<Text>();
+            SetupText(PlotXValueTexts[i], TextAnchor.MiddleCenter, minAnchor, maxAnchor);
+        }
 
-        PlotYMaxText.fontSize = FontSize;
-        PlotYMinText.fontSize = FontSize;
-        PlotXMaxText.fontSize = FontSize;
-        PlotXMinText.fontSize = FontSize;
-        WarningText.fontSize = FontSize;
+        for (int i = 0; i < YAxisNumberCount; i++)
+        {
+            Vector2 minAnchor = Vector2.Lerp(MinYAnchor_MinValue, MinYAnchor_MaxValue, (float)i / (YAxisNumberCount-1));
+            Vector2 maxAnchor = Vector2.Lerp(MaxYAnchor_MinValue, MaxYAnchor_MaxValue, (float)i / (YAxisNumberCount-1));
 
-        //These might be nice to make them depend on TextureResolution
-        PlotYMaxText.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0.9f);
-        PlotYMaxText.GetComponent<RectTransform>().anchorMax = new Vector2(0.1f, 1);
-        PlotYMaxText.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
-        PlotYMaxText.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
-        PlotYMinText.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0.1f);
-        PlotYMinText.GetComponent<RectTransform>().anchorMax = new Vector2(0.1f, 0.2f);
-        PlotYMinText.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
-        PlotYMinText.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
-        PlotXMaxText.GetComponent<RectTransform>().anchorMin = new Vector2(0.9f, 0);
-        PlotXMaxText.GetComponent<RectTransform>().anchorMax = new Vector2(1, 0.1f);
-        PlotXMaxText.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
-        PlotXMaxText.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
-        PlotXMinText.GetComponent<RectTransform>().anchorMin = new Vector2(0.08f, 0);
-        PlotXMinText.GetComponent<RectTransform>().anchorMax = new Vector2(0.18f, 0.1f);
-        PlotXMinText.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
-        PlotXMinText.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
-        WarningText.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
-        WarningText.GetComponent<RectTransform>().anchorMax = new Vector2(1, 1);
-        WarningText.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
-        WarningText.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
+            TextObject = new GameObject($"Y Axis Value {i}", typeof(Text));
+            TextObject.transform.SetParent(transform, false);
+            PlotYValueTexts[i] = TextObject.GetComponent<Text>();
+            SetupText(PlotYValueTexts[i], TextAnchor.MiddleCenter, minAnchor, maxAnchor);
+        }
+
+        TextObject = new GameObject("Warning", typeof(Text));
+        TextObject.transform.SetParent(transform, false);
+        WarningText = TextObject.GetComponent<Text>();
+        SetupText(WarningText, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(1, 1));
+
+        TextObject = new GameObject("Plot Title", typeof(Text));
+        TextObject.transform.SetParent(transform, false);
+        PlotTitleText = TextObject.GetComponent<Text>();
+        SetupText(PlotTitleText, TextAnchor.MiddleCenter, new Vector2(0.45f, 0.95f), new Vector2(0.55f, 1f));
+        PlotTitleText.text = PlotTitle;
+
+        TextObject = new GameObject("X Axis Label", typeof(Text));
+        TextObject.transform.SetParent(transform, false);
+        PlotXTitleText = TextObject.GetComponent<Text>();
+        SetupText(PlotXTitleText, TextAnchor.MiddleCenter, new Vector2(0.45f, 0f), new Vector2(0.55f, 0.05f));
+        PlotXTitleText.text = XAxisLabel;
+
+        TextObject = new GameObject("Y Axis Label", typeof(Text));
+        TextObject.transform.SetParent(transform, false);
+        PlotYTitleText = TextObject.GetComponent<Text>();
+        SetupText(PlotYTitleText, TextAnchor.MiddleLeft, new Vector2(0f, 0.45f), new Vector2(0.1f, 0.55f));
+        PlotYTitleText.text = YAxisLabel;
     }
+
+    private void SetupText(Text textReference, TextAnchor anchorPoint, Vector2 anchorMin, Vector2 anchorMax)
+    {
+        textReference.alignment = anchorPoint;
+        textReference.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
+        textReference.color = TextColor;
+        textReference.fontSize = FontSize;
+        textReference.GetComponent<RectTransform>().anchorMin = anchorMin;
+        textReference.GetComponent<RectTransform>().anchorMax = anchorMax;
+        textReference.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
+        textReference.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
+    }
+
     private float[] CheckLimits(float[] InMinMax)
     {
         if (InMinMax[0] == InMinMax[1])
