@@ -55,8 +55,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tabs:
   - {fileID: 5344281939129784992}
-  - {fileID: 1754923465065180480}
-  - {fileID: 5353143895603302304}
 --- !u!114 &6602257502641325917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,17 +236,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b4dca2142613f47936d29313f62330, type: 3}
---- !u!114 &1754923465065180480 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3044021309938414784, guid: 53b4dca2142613f47936d29313f62330, type: 3}
-  m_PrefabInstance: {fileID: 3631085297802680704}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63147c2c790368a4e9a8516b092bfe65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7642423227458792274 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6371295740094591698, guid: 53b4dca2142613f47936d29313f62330, type: 3}
@@ -396,11 +383,11 @@ PrefabInstance:
     - target: {fileID: 5195814608129290336, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
       propertyPath: TabWindow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8581590111151806104}
     - target: {fileID: 6060284943066426029, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
       propertyPath: TabWindow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2936871780457021321}
     - target: {fileID: 6761680790554919896, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
       propertyPath: m_Name
       value: Room Temp Inspector Window
@@ -410,6 +397,21 @@ PrefabInstance:
 --- !u!224 &65044014090229432 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4877863569837189258, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
+  m_PrefabInstance: {fileID: 4852261624480529970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2198006102370565610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6761680790554919896, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
+  m_PrefabInstance: {fileID: 4852261624480529970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2936871780457021321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7752787809519894971, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
+  m_PrefabInstance: {fileID: 4852261624480529970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8581590111151806104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3765392468608985258, guid: 3fd66e082411620408d8d77b6cfda846, type: 3}
   m_PrefabInstance: {fileID: 4852261624480529970}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6923225988809944672
@@ -438,7 +440,7 @@ PrefabInstance:
     - target: {fileID: 3044021309938414784, guid: 53b4dca2142613f47936d29313f62330, type: 3}
       propertyPath: TabWindow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2198006102370565610}
     - target: {fileID: 6371295740094591698, guid: 53b4dca2142613f47936d29313f62330, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -669,14 +671,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6371295740094591698, guid: 53b4dca2142613f47936d29313f62330, type: 3}
   m_PrefabInstance: {fileID: 6950383818786569056}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5353143895603302304 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3044021309938414784, guid: 53b4dca2142613f47936d29313f62330, type: 3}
-  m_PrefabInstance: {fileID: 6950383818786569056}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63147c2c790368a4e9a8516b092bfe65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

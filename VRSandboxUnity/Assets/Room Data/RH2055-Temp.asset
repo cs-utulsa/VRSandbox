@@ -16,4 +16,14 @@ MonoBehaviour:
   SensorName: LEM5
   numValuesStored: 10
   SensorDataValues:
-    _value: []
+    _value:
+    - temperature/G1XE:30.6 celsius
+    - temperature/G1XE:30.7 celsius
+    - temperature/G1XE:30.9 celsius
+    - temperature/G1XE:31.4 celsius
+    - temperature/G1XE:32 celsius
+    - temperature/G1XE:31.8 celsius
+    - temperature/G1XE:31.4 celsius
+    - temperature/G1XE:30.9 celsius
+    - temperature/G1XE:30.6 celsius
+    - temperature/G1XE:30.2 celsius

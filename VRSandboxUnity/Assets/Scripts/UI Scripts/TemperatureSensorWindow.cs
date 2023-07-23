@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class TemperatureSensorWindow : MonoBehaviour
@@ -17,6 +18,10 @@ public class TemperatureSensorWindow : MonoBehaviour
 
     private void Start()
     {
+        GraphWindow.PlotTilte = "Temperature Graph (C)";
+        GraphWindow.XAxisLabel = "";
+        GraphWindow.YAxisLabel = "";
+        GraphWindow.Initialize();
         UpdateDisplays();
     }
 
@@ -34,7 +39,8 @@ public class TemperatureSensorWindow : MonoBehaviour
             timeValues[i] = i;
             string line = TempSensorData.SensorDataValues[i];
             string valueString = line.Split(":")[1];
-            float value = float.Parse(valueString);
+            string trimmedValueString = Regex.Match(valueString, @"[+-]?\d*\.?\d*").Value;
+            float value = float.Parse(trimmedValueString);
             tempValues[i] = value;
         }
 

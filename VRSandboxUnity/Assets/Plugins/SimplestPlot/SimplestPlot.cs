@@ -79,9 +79,18 @@ public class SimplestPlot : MonoBehaviour
     Vector2 MinYAnchor_MaxValue = new Vector2(0.05f, 0.9f);
     Vector2 MaxYAnchor_MaxValue = new Vector2(0.1f, 0.95f);
 
+    private bool initalized = false;
+
     // Use this for initialization
     public void Awake()
     {
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        if (initalized) return;
+
         PlotImage = GetComponent<Image>();
         if (PlotImage == null) throw new Exception("Simplest plot needs an image component in the same GameObject in order to work.");
 
@@ -92,7 +101,11 @@ public class SimplestPlot : MonoBehaviour
 
         SetResolution(TextureResolution);
 
+        BackGroundArray = Enumerable.Repeat(BackGroundColor, (int)(TextureResolution.x * TextureResolution.y)).ToArray();
+
         InitializeTextObjects();
+
+        initalized = true;
     }
 
     // Getters Setters
@@ -120,38 +133,42 @@ public class SimplestPlot : MonoBehaviour
             DrawAxis();
         }
 
-        if (MyPlotType == PlotType.TimeSeries)
+        if (SeriesPlotX.Length > 0)
         {
-            MinMaxOfPlotsX = FindMinMaxSeries(true);
-            MinMaxOfPlotsY = FindMinMaxSeries(false);
-            ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
-            ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
-            for (int Cnt = 0; Cnt < SeriesPlotY.Count; Cnt++)
-                DrawTimeSeriesPlot(ScaleX, ScaleY, SeriesPlotX, MinMaxOfPlotsX[0], SeriesPlotY[Cnt].YValues, MinMaxOfPlotsY[0], SeriesPlotY[Cnt].MyColor);
-        }
-        else if (MyPlotType == PlotType.Distribution)
-        {
-            MinMaxOfPlotsX = FindMinMaxOfDistribution();
-            MinMaxOfPlotsY = PrepareDistribution(MinMaxOfPlotsX);
-            ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
-            ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
-            for (int Cnt = 0; Cnt < DistributionPlot.Count; Cnt++)
+            if (MyPlotType == PlotType.TimeSeries)
             {
-                float BinDimention = (MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]) / DistributionPlot[Cnt].NumberOfBins;
-                DrawDistributionPlot(ScaleX, ScaleY, BinDimention, MinMaxOfPlotsY[0], ActualDistribution[Cnt], SeriesPlotY[Cnt].MyColor);
+                MinMaxOfPlotsX = FindMinMaxSeries(true);
+                MinMaxOfPlotsY = FindMinMaxSeries(false);
+                ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
+                ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
+                for (int Cnt = 0; Cnt < SeriesPlotY.Count; Cnt++)
+                    DrawTimeSeriesPlot(ScaleX, ScaleY, SeriesPlotX, MinMaxOfPlotsX[0], SeriesPlotY[Cnt].YValues, MinMaxOfPlotsY[0], SeriesPlotY[Cnt].MyColor);
             }
-        }
-        else
-        {
-            MinMaxOfPlotsX = FindMinMaxPhase(true);
-            MinMaxOfPlotsY = FindMinMaxPhase(false);
-            ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
-            ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
-            for (int Cnt = 0; Cnt < PhaseSpacePlot.Count; Cnt++)
-                DrawPhaseSpacePlot(ScaleX, ScaleY, PhaseSpacePlot[Cnt].XValues, MinMaxOfPlotsX[0], PhaseSpacePlot[Cnt].YValues, MinMaxOfPlotsY[0], PhaseSpacePlot[Cnt].MyColor);
+            else if (MyPlotType == PlotType.Distribution)
+            {
+                MinMaxOfPlotsX = FindMinMaxOfDistribution();
+                MinMaxOfPlotsY = PrepareDistribution(MinMaxOfPlotsX);
+                ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
+                ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
+                for (int Cnt = 0; Cnt < DistributionPlot.Count; Cnt++)
+                {
+                    float BinDimention = (MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]) / DistributionPlot[Cnt].NumberOfBins;
+                    DrawDistributionPlot(ScaleX, ScaleY, BinDimention, MinMaxOfPlotsY[0], ActualDistribution[Cnt], SeriesPlotY[Cnt].MyColor);
+                }
+            }
+            else
+            {
+                MinMaxOfPlotsX = FindMinMaxPhase(true);
+                MinMaxOfPlotsY = FindMinMaxPhase(false);
+                ScaleX = PlotTexture.width / (float)(MinMaxOfPlotsX[1] - MinMaxOfPlotsX[0]);
+                ScaleY = PlotTexture.height / (float)(MinMaxOfPlotsY[1] - MinMaxOfPlotsY[0]);
+                for (int Cnt = 0; Cnt < PhaseSpacePlot.Count; Cnt++)
+                    DrawPhaseSpacePlot(ScaleX, ScaleY, PhaseSpacePlot[Cnt].XValues, MinMaxOfPlotsX[0], PhaseSpacePlot[Cnt].YValues, MinMaxOfPlotsY[0], PhaseSpacePlot[Cnt].MyColor);
+            }
+
+            UpdateText(MinMaxOfPlotsX, MinMaxOfPlotsY);
         }
 
-        UpdateText(MinMaxOfPlotsX, MinMaxOfPlotsY);
         PlotTexture.Apply();
         Resources.UnloadUnusedAssets();
     }
@@ -464,6 +481,14 @@ public class SimplestPlot : MonoBehaviour
         PlotYTitleText.fontSize = FontSize;
         WarningText.fontSize = FontSize;
     }
+
+    public void SetLabels()
+    {
+        PlotTitleText.text = PlotTitle;
+        PlotXTitleText.text = XAxisLabel;
+        PlotYTitleText.text = YAxisLabel;
+    }
+
     private void InitializeTextObjects()
     {
         GameObject TextObject;
@@ -501,19 +526,19 @@ public class SimplestPlot : MonoBehaviour
         TextObject = new GameObject("Plot Title", typeof(Text));
         TextObject.transform.SetParent(transform, false);
         PlotTitleText = TextObject.GetComponent<Text>();
-        SetupText(PlotTitleText, TextAnchor.MiddleCenter, new Vector2(0.45f, 0.95f), new Vector2(0.55f, 1f));
+        SetupText(PlotTitleText, TextAnchor.MiddleCenter, new Vector2(0, 0.95f), new Vector2(1, 1f));
         PlotTitleText.text = PlotTitle;
 
         TextObject = new GameObject("X Axis Label", typeof(Text));
         TextObject.transform.SetParent(transform, false);
         PlotXTitleText = TextObject.GetComponent<Text>();
-        SetupText(PlotXTitleText, TextAnchor.MiddleCenter, new Vector2(0.45f, 0f), new Vector2(0.55f, 0.05f));
+        SetupText(PlotXTitleText, TextAnchor.MiddleCenter, new Vector2(0, 0f), new Vector2(1, 0.05f));
         PlotXTitleText.text = XAxisLabel;
 
         TextObject = new GameObject("Y Axis Label", typeof(Text));
         TextObject.transform.SetParent(transform, false);
         PlotYTitleText = TextObject.GetComponent<Text>();
-        SetupText(PlotYTitleText, TextAnchor.MiddleLeft, new Vector2(0f, 0.45f), new Vector2(0.1f, 0.55f));
+        SetupText(PlotYTitleText, TextAnchor.MiddleLeft, new Vector2(0f, 0), new Vector2(0.1f, 1));
         PlotYTitleText.text = YAxisLabel;
     }
 
