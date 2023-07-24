@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +15,16 @@ public class Sensor : MqttReceiver
     {
         get
         {
-            return $"{SensorDataObject.SensorType}/{SensorDataObject.SensorName}";
+            return $"{Enum.GetName(typeof(SensorData.SensorTypes), SensorDataObject.SensorType)}/{SensorDataObject.SensorName}";
         }
     }
 
     protected override void Awake()
     {
         base.Awake();
+        Debug.Log(SensorHandle);
         topicsToSubscribe.Add(SensorHandle);
+        SensorDataObject.SubscribeListeners();
         OnMessageArrived += ProcessSensorMessage;
     }
 
@@ -37,6 +40,7 @@ public class Sensor : MqttReceiver
 
     protected virtual void ProcessSensorMessage(string message)
     {
+        Debug.Log(message);
         SensorDataObject.SensorDataValues.Add(message);
     }
 

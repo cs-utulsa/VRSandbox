@@ -16,20 +16,11 @@ public class Room : MonoBehaviour
     /// </summary>
     public Collider RoomCollider;
 
-    /// <summary>
-    /// All sensors currently used by this room
-    /// </summary>
-    public Sensor[] Sensors;
-
-    public Canvas SensorTextCanvas;
-
     public Scene RoomViewScene;
 
     private XRBaseInteractable _roomInteractable;
     private Material _roomMaterial;
     private bool _hovered, _selected;
-
-    private GameObject _interactionMenu;
 
     private void Awake()
     {
@@ -57,15 +48,20 @@ public class Room : MonoBehaviour
     {
         _selected = !_selected;
         SetColor();
-        _interactionMenu.SetActive(_selected);
 
         if(_selected)
         {
-            OnRoomSelected(this);
+            if(OnRoomSelected != null)
+            {
+                OnRoomSelected(this);
+            }            
         }
         else
         {
-            OnRoomDeselected(this);
+            if(OnRoomDeselected != null)
+            {
+                OnRoomDeselected(this);
+            }
         }
     }
 
@@ -79,11 +75,6 @@ public class Room : MonoBehaviour
     {
         _hovered = false;
         SetColor();
-    }
-
-    private void DisplaySensorText()
-    {
-
     }
 
     private void SetColor()

@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc69a61db44b76541b138972ae1cd607, type: 3}
   m_Name: RH2055-Temp
   m_EditorClassIdentifier: 
-  SensorType: Temperature
-  SensorName: vngwbowvnio
+  SensorType: 0
+  SensorName: M9IF
   numValuesStored: 10
   SensorDataValues:
-    _value: []
+    _value:
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'
+    - 'temperature/M9IF: 31.07 celsius'

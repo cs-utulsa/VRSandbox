@@ -20,17 +20,15 @@ public class ObjectManipulationController : MonoBehaviour
     private XRGrabInteractable _grabInteractable;
     private XRGeneralGrabTransformer _grabTransformer;
     private Collider _mapCollider;
-    private bool isGrabbed = false;
-    private Quaternion initialRotation;
-    private float previousAngle;
-    private Vector3 initialScale;
-    private float initialDistance;
+    private Transform _defaultParent;
 
     private void Awake()
     {
         _grabInteractable = GetComponent<XRGrabInteractable>();
         _grabTransformer = GetComponent<XRGeneralGrabTransformer>();
         _mapCollider = GetComponent<Collider>();
+        _defaultParent = transform.parent;
+        gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -79,5 +77,11 @@ public class ObjectManipulationController : MonoBehaviour
                 _grabTransformer.allowTwoHandedScaling = true;
                 break;
         }
+    }
+
+    public void SetObjectActive(bool active)
+    {
+        transform.SetParent(active ? null : _defaultParent);
+        gameObject.SetActive(active);
     }
 }
