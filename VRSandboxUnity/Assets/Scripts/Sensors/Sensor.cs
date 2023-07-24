@@ -24,6 +24,7 @@ public class Sensor : MqttReceiver
         base.Awake();
         Debug.Log(SensorHandle);
         topicsToSubscribe.Add(SensorHandle);
+        SensorDataObject.SubscribeListeners();
         OnMessageArrived += ProcessSensorMessage;
     }
 
@@ -39,6 +40,7 @@ public class Sensor : MqttReceiver
 
     protected virtual void ProcessSensorMessage(string message)
     {
+        Debug.Log(message);
         SensorDataObject.SensorDataValues.Add(message);
     }
 

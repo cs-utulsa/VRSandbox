@@ -7,7 +7,7 @@ public class DataGraphWindow : MonoBehaviour
     public SimplestPlot PlotReference;
 
     [Header("Labels")]
-    public string PlotTilte;
+    public string PlotTitle;
     public string XAxisLabel;
     public string YAxisLabel;
     [Header("Colors")]
@@ -33,7 +33,7 @@ public class DataGraphWindow : MonoBehaviour
         PlotReference.SeriesPlotY.Add(new SimplestPlot.SeriesClass());
         PlotReference.SeriesPlotY[0].MyColor = PlotColor;
 
-        PlotReference.PlotTitle = PlotTilte;
+        PlotReference.PlotTitle = PlotTitle;
         PlotReference.XAxisLabel = XAxisLabel;
         PlotReference.YAxisLabel = YAxisLabel;
         PlotReference.SetLabels();

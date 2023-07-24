@@ -43,7 +43,6 @@ public class MqttReceiver : M2MqttUnityClient
         }
         set
         {
-            if (m_msg == value) return;
             m_msg = value;
             if (OnMessageArrived != null)
             {
@@ -90,11 +89,13 @@ public class MqttReceiver : M2MqttUnityClient
 
     protected override void OnConnecting()
     {
+        Debug.Log($"Connecting to {brokerAddress}");
         base.OnConnecting();
     }
 
     protected override void OnConnected()
     {
+        Debug.Log($"Succesffully connected to {brokerAddress}");
         base.OnConnected();
         isConnected = true;
     }
@@ -120,6 +121,7 @@ public class MqttReceiver : M2MqttUnityClient
     /// </summary>
     protected override void SubscribeTopics()
     {
+        Debug.Log("Subscribing to Topics");
         //remove any topics we are already subscribed to from the list
         var trueSubList = topicsToSubscribe.Where(x => !topicsToUnsubscribe.Contains(x));
         //subscribe to new topics
@@ -140,6 +142,7 @@ public class MqttReceiver : M2MqttUnityClient
 
     protected override void UnsubscribeTopics()
     {
+        Debug.Log("Unsubscribing from Topics");
         client.Unsubscribe(topicsToUnsubscribe.ToArray());
     }
 
@@ -165,12 +168,14 @@ public class MqttReceiver : M2MqttUnityClient
     protected override void DecodeMessage(string topic, byte[] message)
     {
         //The message is decoded
-        msg = System.Text.Encoding.UTF8.GetString(message);
+        string tempmsg = System.Text.Encoding.UTF8.GetString(message);
 
-        Debug.Log("Received: " + msg);
+        Debug.Log("Received: " + tempmsg);
         Debug.Log("from topic: " + topic);
 
-        StoreMessage($"{topic}: {msg}");
+        msg = $"{topic}: {tempmsg}";
+
+        StoreMessage(msg);
     }
 
     private void StoreMessage(string eventMsg)

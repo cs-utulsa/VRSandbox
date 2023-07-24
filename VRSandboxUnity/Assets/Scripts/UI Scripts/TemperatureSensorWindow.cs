@@ -18,10 +18,14 @@ public class TemperatureSensorWindow : MonoBehaviour
 
     private void Start()
     {
-        GraphWindow.PlotTilte = "Temperature Graph (C)";
-        GraphWindow.XAxisLabel = "";
-        GraphWindow.YAxisLabel = "";
-        GraphWindow.Initialize();
+        if(GraphWindow != null)
+        {
+            GraphWindow.PlotTitle = "Temperature Graph (C)";
+            GraphWindow.XAxisLabel = "";
+            GraphWindow.YAxisLabel = "";
+            GraphWindow.Initialize();
+        }
+        
         UpdateDisplays();
     }
 
@@ -31,22 +35,23 @@ public class TemperatureSensorWindow : MonoBehaviour
 
         int dataCount = TempSensorData.SensorDataValues.Count;
 
-        float[] timeValues = new float[dataCount];
-        float[] tempValues = new float[dataCount];
-
-        for(int i = 0; i < dataCount; i++)
+        if (GraphWindow != null)
         {
-            timeValues[i] = i;
-            string line = TempSensorData.SensorDataValues[i];
-            string valueString = line.Split(":")[1];
-            string trimmedValueString = Regex.Match(valueString, @"[+-]?\d*\.?\d*").Value;
-            float value = float.Parse(trimmedValueString);
-            tempValues[i] = value;
+            float[] timeValues = new float[dataCount];
+            float[] tempValues = new float[dataCount];
+
+            for (int i = 0; i < dataCount; i++)
+            {
+                timeValues[i] = i;
+                string line = TempSensorData.SensorDataValues[i];
+                string valueString = line.Split(":")[1].Trim();
+                string trimmedValueString = Regex.Match(valueString, @"[+-]?\d*\.?\d*").Value;
+                float value = float.Parse(trimmedValueString);
+                tempValues[i] = value;
+            }
+            GraphWindow.DisplayGraph(timeValues, tempValues);
         }
-
-        GraphWindow.DisplayGraph(timeValues, tempValues);
     }
-
     private void UpdateDisplays(int index)
     {
         UpdateDisplays();

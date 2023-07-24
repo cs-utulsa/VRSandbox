@@ -26,7 +26,7 @@ public class SensorData : ScriptableObject
 
     public int numValuesStored = 10;
 
-    public ObservableList<string> SensorDataValues;
+    public ObservableList<string> SensorDataValues = new ObservableList<string>();
 
     //Wrappers for list events
     public event Action OnDataListUpdated
@@ -54,8 +54,15 @@ public class SensorData : ScriptableObject
         }
     }
 
+    public void SubscribeListeners()
+    {
+        OnDataListUpdated += TrimSensorData;
+        OnDataValueChanged += delegate (int x) { TrimSensorData(); };
+    }
+
     private void TrimSensorData()
     {
+        Debug.LogWarning("Trim Sensor Data");
         if (SensorDataValues.Count > numValuesStored)
         {
             SensorDataValues.RemoveRange(0, SensorDataValues.Count - numValuesStored);
@@ -65,5 +72,10 @@ public class SensorData : ScriptableObject
     private void OnValidate()
     {
         TrimSensorData();
+    }
+
+    private void OnDisable()
+    {
+        SensorDataValues.Clear();
     }
 }
