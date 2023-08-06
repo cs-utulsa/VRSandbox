@@ -23,7 +23,7 @@ public class MouseLook : MonoBehaviour
 
     private void StartingPos()
     {
-        this.transform.position = new Vector3(1.41f, 1.4f, 3.14f);
+        this.transform.position = new Vector3(0.351f, 2f, 0.6f);
         startFlag = true;
     }
 
