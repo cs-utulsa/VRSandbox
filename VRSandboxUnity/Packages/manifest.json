@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.htc.upm.vive-input-utility": "1.18.0",
+    "com.htc.upm.vive-input-utility": "1.18.1",
     "com.htc.upm.wave.xrsdk": "5.2.1-r.1",
     "com.unity.collab-proxy": "2.0.3",
     "com.unity.feature.development": "1.0.1",
