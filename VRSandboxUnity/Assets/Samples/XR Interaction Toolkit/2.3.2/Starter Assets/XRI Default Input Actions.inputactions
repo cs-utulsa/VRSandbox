@@ -733,7 +733,7 @@
                 {
                     "name": "",
                     "id": "71d94579-1bf4-4034-ab9e-e7166842128f",
-                    "path": "<XRController>{LeftHand}/trigger",
+                    "path": "<XRController>{LeftHand}/touchpadClick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
