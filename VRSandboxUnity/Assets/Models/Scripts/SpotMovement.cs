@@ -3,19 +3,37 @@ using UnityEngine.Animations.Rigging;
 
 public class SpotMovement : MonoBehaviour
 {
+    //Variables to allow drag and drop rig in the inspector
     public Rig rig = null;   
 
+    //variables to drag and drop controllers and input from json
     public Transform targetFL = null;
     public Transform targetFR = null;
     public Transform targetBL = null;
     public Transform targetBR = null;
+    
+    //new position input variables
+    private Vector3 FL;
+    private Vector3 FR;
+    private Vector3 BL;
+    private Vector3 BR;
+     
 
+    //adjustable in case some speed adjustment is needed. This will probably be some interpolation later.
     public float Movespeed = 3.5f;
 
     private void Update()
     {
-        float vert = Input.GetAxis("Vertical");
-        float horz = Input.GetAxis("Horizontal");
+        //TO DO: get the input from the dogs
+       
+
+        //apply the input to the foot controllers
+        targetFL.Translate(FL * Time.deltaTime);
+        targetFR.Translate(FR * Time.deltaTime);
+        targetBL.Translate(BR * Time.deltaTime);
+        targetBR.Translate(BR * Time.deltaTime);
+
+
     }
 
 }
