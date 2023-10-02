@@ -561,9 +561,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weight: 1
   m_Data:
-    m_Root: {fileID: 245015577012279132}
-    m_Mid: {fileID: 5676602106648694102}
-    m_Tip: {fileID: 9143411476601074610}
+    m_Root: {fileID: 1215204815355496774}
+    m_Mid: {fileID: 7238159780356468079}
+    m_Tip: {fileID: 4745452658725318903}
     m_Target: {fileID: 1834724950}
     m_Hint: {fileID: 332308297}
     m_TargetPositionWeight: 1
@@ -667,9 +667,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weight: 1
   m_Data:
-    m_Root: {fileID: 245015577012279132}
-    m_Mid: {fileID: 5676602106648694102}
-    m_Tip: {fileID: 9143411476601074610}
+    m_Root: {fileID: 8189799244193183266}
+    m_Mid: {fileID: 109822994306038746}
+    m_Tip: {fileID: 2116212680895072738}
     m_Target: {fileID: 55204606}
     m_Hint: {fileID: 1687793146}
     m_TargetPositionWeight: 1
@@ -879,9 +879,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weight: 1
   m_Data:
-    m_Root: {fileID: 245015577012279132}
-    m_Mid: {fileID: 5676602106648694102}
-    m_Tip: {fileID: 9143411476601074610}
+    m_Root: {fileID: 7723552964668625789}
+    m_Mid: {fileID: 8101100963048689497}
+    m_Tip: {fileID: 3143657646994869352}
     m_Target: {fileID: 1849060204}
     m_Hint: {fileID: 371577476}
     m_TargetPositionWeight: 1
@@ -1550,11 +1550,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c05c5fe4d7d9543b99c9fbe3e1745f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rig: {fileID: 0}
+  rig: {fileID: 637262271}
   targetFL: {fileID: 1374531795}
   targetFR: {fileID: 1849060204}
-  targetBL: {fileID: 0}
-  targetBR: {fileID: 0}
+  targetBL: {fileID: 55204606}
+  targetBR: {fileID: 1834724950}
   Movespeed: 3.5
 --- !u!4 &7238159780356468079 stripped
 Transform:
