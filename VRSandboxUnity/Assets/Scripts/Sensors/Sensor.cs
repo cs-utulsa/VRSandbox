@@ -52,7 +52,7 @@ public class Sensor : MqttReceiver
         //SensorDataObject.SensorDataValues.Add(message);
 
         foreach (var reading in readingsSerializable.readings) {
-            if (reading.reading_type == "temperature") {
+            if (reading.reading_type == SensorDataObject.SensorType.ToString().ToLower()) {
                 SensorDataObject.SensorDataValues.Add(reading.reading_val);
             }
         }
@@ -99,8 +99,16 @@ public class SensorReadings {
     public static SensorReadings CreateFromJSON(string jsonString)
     {
         //try {
-            Debug.Log(jsonString);
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<SensorReadings>(jsonString);
+            //jsonString = jsonString.Replace("\"", "'");
+            //jsonString = jsonString.Trim(new char[]{'\uFEFF', '\u200B'});
+            //jsonString = jsonString.Trim();
+
+            // "readings/G1XE: "
+
+            // Substring from first ": " to end of string
+            jsonString = jsonString.Substring(jsonString.IndexOf(": ") + 2);
+            Debug.Log("JSON String: " + jsonString);
+            return JsonConvert.DeserializeObject<SensorReadings>(jsonString);
             //return JsonUtility.FromJson<SensorReadings>(jsonString); // Returns a SensorReadings object from the JSON string.
         //} catch(Exception e) {
         //    Debug.Log($"Error with CreateFromJSON: {e.Message}");
