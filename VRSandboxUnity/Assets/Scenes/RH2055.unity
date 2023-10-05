@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18242621, g: 0.22813727, b: 0.30727506, a: 1}
+  m_IndirectSpecularColor: {r: 0.18242654, g: 0.228138, b: 0.307276, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37571c3b595a7894684e053d296e5f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: 10.0.2.154
+  brokerAddress: 10.0.53.162
   brokerPort: 1883
   isEncrypted: 0
   certificateName: 
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37571c3b595a7894684e053d296e5f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: 10.0.2.154
+  brokerAddress: 10.0.53.162
   brokerPort: 1883
   isEncrypted: 0
   certificateName: 
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37571c3b595a7894684e053d296e5f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: 10.0.2.154
+  brokerAddress: 10.0.53.162
   brokerPort: 1883
   isEncrypted: 0
   certificateName: 
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37571c3b595a7894684e053d296e5f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: 10.0.2.154
+  brokerAddress: 10.0.53.162
   brokerPort: 1883
   isEncrypted: 0
   certificateName: 

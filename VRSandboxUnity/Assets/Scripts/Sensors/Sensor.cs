@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Sensor : MqttReceiver
 {
     [Header("Sensor Data")]
@@ -15,7 +16,8 @@ public class Sensor : MqttReceiver
     {
         get
         {
-            return $"{Enum.GetName(typeof(SensorData.SensorTypes), SensorDataObject.SensorType)}/{SensorDataObject.SensorName}";
+            //return $"{Enum.GetName(typeof(SensorData.SensorTypes), SensorDataObject.SensorType)}/{SensorDataObject.SensorName}";
+            return $"readings/{SensorDataObject.SensorName}";
         }
     }
 
@@ -41,11 +43,60 @@ public class Sensor : MqttReceiver
     protected virtual void ProcessSensorMessage(string message)
     {
         Debug.Log(message);
-        SensorDataObject.SensorDataValues.Add(message);
+
+        // Process JSON String, find the Data Object's sensor type, and add the value to the SensorDataValues list 
+        SensorReadings readingsSerializable = SensorReadings.CreateFromJSON(message);
+
+
+        //SensorDataObject.SensorDataValues.Add(message);
+
+        foreach (var reading in readingsSerializable.readings) {
+            if (reading.reading_type == "temperature") {
+                SensorDataObject.SensorDataValues.Add(reading.reading_val);
+            }
+        }
+
+        
     }
 
     /// <summary>
     /// Initializes the Sensor
     /// </summary>
     public virtual void InitializeSensor() {}
+}
+
+
+
+
+
+/// <summary>
+/// Object that holds the incoming sensor data from the MQTT network.
+/// Parses the JSON string into a list of SensorReading objects.
+/// </summary>
+
+[System.Serializable]
+public class SensorReadings {
+    public List<SensorReading> readings { get; set; } // Represents all of the readings from the received JSON string.
+
+
+/// <summary>
+/// Class that holds a singular sensor reading from the device. Portion of the SensorReadings object.
+/// </summary>
+
+    [System.Serializable]
+    public class SensorReading {
+        public string reading_type { get; set; } // e.g. "temperature"
+        public string reading_unit { get; set; } // e.g. "celsius"
+        public string reading_val { get; set; } // e.g. "32.5"
+    }
+
+
+    /// <summary>
+    /// Parses the JSON string into a SensorReadings object.
+    /// </summary>
+    /// <param name="jsonString"> Received message of sensor readings, formatted as a JSON string. </param>
+    public static SensorReadings CreateFromJSON(string jsonString)
+    {
+        return JsonUtility.FromJson<SensorReadings>(jsonString); // Returns a SensorReadings object from the JSON string.
+    }
 }
