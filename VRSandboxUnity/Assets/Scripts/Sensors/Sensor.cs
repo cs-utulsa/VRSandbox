@@ -52,8 +52,8 @@ public class Sensor : MqttReceiver
         //SensorDataObject.SensorDataValues.Add(message);
 
         foreach (var reading in readingsSerializable.readings) {
-            if (reading.reading_type == SensorDataObject.SensorType.ToString().ToLower()) {
-                SensorDataObject.SensorDataValues.Add(reading.reading_val);
+            if (reading.reading_type == SensorDataObject.SensorType.ToString().ToLower()) { // If reading_type matches the given data object's sensor type
+                SensorDataObject.SensorDataValues.Add(reading.reading_val); // Add the reading value to the data object
             }
         }
 
@@ -98,21 +98,9 @@ public class SensorReadings {
     /// <param name="jsonString"> Received message of sensor readings, formatted as a JSON string. </param>
     public static SensorReadings CreateFromJSON(string jsonString)
     {
-        //try {
-            //jsonString = jsonString.Replace("\"", "'");
-            //jsonString = jsonString.Trim(new char[]{'\uFEFF', '\u200B'});
-            //jsonString = jsonString.Trim();
+            jsonString = jsonString.Substring(jsonString.IndexOf(": ") + 2); // Remove topic from message string
+            //Debug.Log("JSON String: " + jsonString);
 
-            // "readings/G1XE: "
-
-            // Substring from first ": " to end of string
-            jsonString = jsonString.Substring(jsonString.IndexOf(": ") + 2);
-            Debug.Log("JSON String: " + jsonString);
-            return JsonConvert.DeserializeObject<SensorReadings>(jsonString);
-            //return JsonUtility.FromJson<SensorReadings>(jsonString); // Returns a SensorReadings object from the JSON string.
-        //} catch(Exception e) {
-        //    Debug.Log($"Error with CreateFromJSON: {e.Message}");
-        //    return null;
-        //}
+            return JsonConvert.DeserializeObject<SensorReadings>(jsonString); // Returns a SensorReadings object from the JSON string.
     }
 }
