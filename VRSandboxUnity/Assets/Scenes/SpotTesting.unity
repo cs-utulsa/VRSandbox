@@ -399,6 +399,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &630215355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6065758351059755704, guid: 5977bce46a3c7034c8eb84df291a5b65, type: 3}
+  m_PrefabInstance: {fileID: 7915917306494196349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637262270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,11 +1556,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: 637262271}
+  dogProxy: {fileID: 7100624633948751189}
+  body: {fileID: 630215355}
   targetFL: {fileID: 1374531795}
   targetFR: {fileID: 1849060204}
   targetBL: {fileID: 55204606}
   targetBR: {fileID: 1834724950}
+  init_FL: {fileID: 0}
+  init_FR: {fileID: 0}
+  init_BL: {fileID: 0}
+  init_BR: {fileID: 0}
   Movespeed: 3.5
+--- !u!114 &7100624633948751189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549057852251751823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da33d62e4c22dee4cac21a773fac948c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7100624633948751190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549057852251751823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1a560711a0dc54c847d3f8a501a212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogProxy: {fileID: 7100624633948751189}
+  videoTarget: {fileID: 0}
+  videoStatusText: {fileID: 0}
+  videoDropdown: {fileID: 0}
+  autowalkRunButton: {fileID: 0}
+  autowalkDropdown: {fileID: 0}
+  acquireLeaseButton: {fileID: 0}
+  releaseLeaseButton: {fileID: 0}
+  acquireEStopButton: {fileID: 0}
+  allowEStopButton: {fileID: 0}
+  powerStatusBackground: {fileID: 0}
+  powerStatusText: {fileID: 0}
+  motorPowerBackground: {fileID: 0}
+  motorPowerText: {fileID: 0}
+  leaseStatusBackground: {fileID: 0}
+  leaseStatusText: {fileID: 0}
+  estopStatusBackground: {fileID: 0}
+  estopStatusText: {fileID: 0}
 --- !u!4 &7238159780356468079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 696341746650363666, guid: 5977bce46a3c7034c8eb84df291a5b65, type: 3}
@@ -1602,15 +1655,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6462855091512575304, guid: 5977bce46a3c7034c8eb84df291a5b65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7942193
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 6462855091512575304, guid: 5977bce46a3c7034c8eb84df291a5b65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6462855091512575304, guid: 5977bce46a3c7034c8eb84df291a5b65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.06017
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 6462855091512575304, guid: 5977bce46a3c7034c8eb84df291a5b65, type: 3}
       propertyPath: m_LocalRotation.w
