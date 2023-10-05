@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
 
 public class Sensor : MqttReceiver
@@ -76,7 +77,7 @@ public class Sensor : MqttReceiver
 
 [System.Serializable]
 public class SensorReadings {
-    public List<SensorReading> readings { get; set; } // Represents all of the readings from the received JSON string.
+    public List<SensorReading> readings {get; set;} // Represents all of the readings from the received JSON string.
 
 
 /// <summary>
@@ -85,9 +86,9 @@ public class SensorReadings {
 
     [System.Serializable]
     public class SensorReading {
-        public string reading_type { get; set; } // e.g. "temperature"
-        public string reading_unit { get; set; } // e.g. "celsius"
-        public string reading_val { get; set; } // e.g. "32.5"
+        public string reading_type; // e.g. "temperature"
+        public string reading_unit; // e.g. "celsius"
+        public string reading_val; // e.g. "32.5"
     }
 
 
@@ -97,6 +98,13 @@ public class SensorReadings {
     /// <param name="jsonString"> Received message of sensor readings, formatted as a JSON string. </param>
     public static SensorReadings CreateFromJSON(string jsonString)
     {
-        return JsonUtility.FromJson<SensorReadings>(jsonString); // Returns a SensorReadings object from the JSON string.
+        //try {
+            Debug.Log(jsonString);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<SensorReadings>(jsonString);
+            //return JsonUtility.FromJson<SensorReadings>(jsonString); // Returns a SensorReadings object from the JSON string.
+        //} catch(Exception e) {
+        //    Debug.Log($"Error with CreateFromJSON: {e.Message}");
+        //    return null;
+        //}
     }
 }
