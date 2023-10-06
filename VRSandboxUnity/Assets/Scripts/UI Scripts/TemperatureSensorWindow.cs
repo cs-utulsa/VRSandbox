@@ -44,7 +44,7 @@ public class TemperatureSensorWindow : MonoBehaviour
             {
                 timeValues[i] = i;
                 string line = TempSensorData.SensorDataValues[i];
-                string valueString = line.Split(":")[1].Trim();
+                string valueString = line.Trim();
                 string trimmedValueString = Regex.Match(valueString, @"[+-]?\d*\.?\d*").Value;
                 float value = float.Parse(trimmedValueString);
                 tempValues[i] = value;
