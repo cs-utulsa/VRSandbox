@@ -31,4 +31,12 @@ public class DataLogWindow : MonoBehaviour
 
         LogText.text = messageText.ToString();
     }
+
+    public void ClearData()
+    {
+        // Clear the log text
+        LogText.text = string.Empty;
+    }
+
+
 }

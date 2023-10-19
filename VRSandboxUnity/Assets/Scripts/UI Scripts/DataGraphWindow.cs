@@ -46,4 +46,14 @@ public class DataGraphWindow : MonoBehaviour
         PlotReference.SeriesPlotY[0].YValues = yValues;
         PlotReference.UpdatePlot();
     }
+
+    public void ClearGraph()
+    {
+        // Reset the data arrays
+        PlotReference.SeriesPlotX = new float[0];
+        PlotReference.SeriesPlotY[0].YValues = new float[0];
+
+        // Update the plot to reflect the changes
+        PlotReference.UpdatePlot();
+    }
 }

@@ -5,15 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bootstrap.unity
     guid: 1ec7a9d9518526044ac57465e64fec4b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rayzor-Floorplan-View.unity
     guid: 020c16a4b3b1da145a0a9f28950d77cf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RH2055.unity
     guid: b6b4aa51dd65c1147b2291bddce4625c
+  - enabled: 0
+    path: Assets/Scenes/GambelOffice.unity
+    guid: 0af7ce7443998c3418c1fe6d0c6b193b
+  - enabled: 1
+    path: Assets/Scenes/GamblesOffice.unity
+    guid: cff9ac8a267cc5d45ad03a51e5beeb89
+  - enabled: 0
+    path: Assets/Scenes/RH2125.unity
+    guid: 2040696e79423204497f77dc445241c1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 50ee3d2acd7b8904a8669f350e9503ff, type: 2}
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: db9c928a57725d843846f5bcf7b90651, type: 2}

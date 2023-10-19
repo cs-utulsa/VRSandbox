@@ -15,7 +15,9 @@ public class Sensor : MqttReceiver
     {
         get
         {
-            return $"{Enum.GetName(typeof(SensorData.SensorTypes), SensorDataObject.SensorType)}/{SensorDataObject.SensorName}";
+            /*return $"{Enum.GetName(typeof(SensorData.SensorTypes), SensorDataObject.SensorType)}/{SensorDataObject.SensorName}";*/
+            return $"{SensorDataObject.SensorType}/{SensorDataObject.SensorName}";
+
         }
     }
 
