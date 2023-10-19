@@ -13,7 +13,7 @@ public class DogProxy : MonoBehaviour
 	// private const string statusHost = "http://10.0.1.69:5001/status";
 	// private const string statusPath = "/status/socket.io";
 	private const string host = "http://10.0.1.69:5001";
-	private const string statusHost = "http://10.0.1.69:5011";
+	private const string statusHost = "http://10.0.1.69:5010";
 	private const string statusPath = "";
 	private Texture2D videoTexture;
 
