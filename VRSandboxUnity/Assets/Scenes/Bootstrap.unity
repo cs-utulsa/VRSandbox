@@ -731,6 +731,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475050708}
   m_CullTransparentMesh: 1
+--- !u!1 &475127284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773705769082040686, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+  m_PrefabInstance: {fileID: 2977743612100414684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547553910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,6 +2264,10 @@ PrefabInstance:
       propertyPath: m_TwoHandedRotationMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 795988007073533617, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 942818216370403818, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2681,9 +2690,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6106155115511682928, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6222536716196763308, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231736032040772940, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6454594071094758631, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
@@ -2866,6 +2883,22 @@ PrefabInstance:
     - target: {fileID: 8851808311301359058, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_UIScrollAction.m_Action.m_Id
+      value: d66dbfd1-eb11-430e-8817-9e331286b580
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_Id
+      value: 4b539254-46b1-4b56-a769-13e0a03189b2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_UIScrollAction.m_Action.m_Name
+      value: UI Scroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_Name
+      value: Is Tracked
       objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948809, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
@@ -3072,6 +3105,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1627214324374562804, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627214324374562804, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627214324374562804, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1750869906046274467, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
       propertyPath: FontSize
       value: 10
@@ -3104,6 +3149,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -17.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2671641715017220902, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: TabWindow
+      value: 
+      objectReference: {fileID: 475127284}
     - target: {fileID: 2914813981260176219, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3119,6 +3168,50 @@ PrefabInstance:
     - target: {fileID: 2914813981260176219, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: BGColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: BGColor.b
+      value: 0.2268423
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: BGColor.g
+      value: 0.2268423
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: BGColor.r
+      value: 0.254717
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: PlotTitle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: XAxisLabel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: YAxisLabel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: PlotColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: PlotColor.r
+      value: 0.6487
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: TextColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
+      propertyPath: TextColor.g
+      value: 0.53708243
       objectReference: {fileID: 0}
     - target: {fileID: 3461649658015151510, guid: 216d84aee1246e2479f3469fb0d89285, type: 3}
       propertyPath: PlotReference

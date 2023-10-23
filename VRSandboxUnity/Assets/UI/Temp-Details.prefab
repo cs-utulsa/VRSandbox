@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63147c2c790368a4e9a8516b092bfe65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TabWindow: {fileID: 1773705769082040686}
+  TabWindow: {fileID: 0}
 --- !u!1 &1073971826305757386
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temp-DataGraph
       objectReference: {fileID: 0}
+    - target: {fileID: 6085075815543542007, guid: 181f27394397b01488c2b7506e626182, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7810038645248140096, guid: 181f27394397b01488c2b7506e626182, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -917,11 +921,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181f27394397b01488c2b7506e626182, type: 3}
---- !u!1 &1773705769082040686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6085075815543542007, guid: 181f27394397b01488c2b7506e626182, type: 3}
-  m_PrefabInstance: {fileID: 5543930905321087385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2345578318766506713 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7810038645248140096, guid: 181f27394397b01488c2b7506e626182, type: 3}
@@ -932,7 +931,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8999810317359862799, guid: 181f27394397b01488c2b7506e626182, type: 3}
   m_PrefabInstance: {fileID: 5543930905321087385}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773705769082040686}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75491c91a1393dc4b90c8741678d72bb, type: 3}
@@ -956,6 +955,10 @@ PrefabInstance:
     - target: {fileID: 1875867125617000032, guid: 17058575ca01fae41ba596e69be82407, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156669202005579747, guid: 17058575ca01fae41ba596e69be82407, type: 3}
+      propertyPath: m_Size
+      value: 0.46249777
       objectReference: {fileID: 0}
     - target: {fileID: 5661266701890625541, guid: 17058575ca01fae41ba596e69be82407, type: 3}
       propertyPath: m_Pivot.x

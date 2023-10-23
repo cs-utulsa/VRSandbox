@@ -400,6 +400,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Data Log Window
       objectReference: {fileID: 0}
+    - target: {fileID: 934008484631970675, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934008484631970675, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934008484631970675, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046838378747820041, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894247937233030471, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675519331964185463, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675519331964185463, guid: 21e4880928995d2438da36daca65e496, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8398679676809445913, guid: 21e4880928995d2438da36daca65e496, type: 3}
       propertyPath: m_Pivot.x
       value: 1
