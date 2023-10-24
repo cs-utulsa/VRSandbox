@@ -18,12 +18,15 @@ public class TemperatureSensorWindow : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Start Graph");
         if(GraphWindow != null)
         {
+            Debug.Log("Print Graph text");
             GraphWindow.PlotTitle = "Temperature Graph (C)";
             GraphWindow.XAxisLabel = "";
             GraphWindow.YAxisLabel = "";
             GraphWindow.Initialize();
+            Debug.Log("Print Graph text 2");
         }
         
         UpdateDisplays();
