@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Commander : MqttPublisher
+public class CommandPublisher : MqttPublisher
 {
 
     protected override void Awake()
@@ -19,10 +19,10 @@ public class Commander : MqttPublisher
     {
         base.Update();
 
-        if(isConnected) {
-            SendCommand("L4MP", "on");
-            Debug.Log("Command sent");
-        }
+        // if(isConnected) {
+        //     SendCommand("L4MP", "on");
+        //     Debug.Log("Command sent");
+        // }
 
     }
 
