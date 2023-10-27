@@ -13,7 +13,37 @@ MonoBehaviour:
   m_Name: testData
   m_EditorClassIdentifier: 
   SensorType: 0
-  SensorName: 
-  numValuesStored: 10
+  SensorName: B35T
+  numValuesStored: 30
   SensorDataValues:
-    _value: []
+    _value:
+    - 'CO2: 500.00 ppm'
+    - 'acceleration: 0.09_-0.07_-0.98 v3'
+    - 'temperature: 33.05 celsius'
+    - 'humidity: 29.91 percent'
+    - 'pressure: 98.61 hectopascals'
+    - 'gas_resistor: 12946860.00 ppb'
+    - 'VOC: 0.50 ppm'
+    - 'CO2: 500.00 ppm'
+    - 'acceleration: 0.09_-0.07_-0.98 v3'
+    - 'temperature: 33.07 celsius'
+    - 'humidity: 30.02 percent'
+    - 'pressure: 98.61 hectopascals'
+    - 'gas_resistor: 12946860.00 ppb'
+    - 'VOC: 0.50 ppm'
+    - 'CO2: 500.00 ppm'
+    - 'acceleration: 0.09_-0.07_-0.98 v3'
+    - 'temperature: 33.08 celsius'
+    - 'humidity: 30.11 percent'
+    - 'pressure: 98.61 hectopascals'
+    - 'gas_resistor: 12946860.00 ppb'
+    - 'VOC: 0.50 ppm'
+    - 'CO2: 500.00 ppm'
+    - 'acceleration: 0.09_-0.07_-0.98 v3'
+    - 'temperature: 33.09 celsius'
+    - 'humidity: 30.10 percent'
+    - 'pressure: 98.61 hectopascals'
+    - 'gas_resistor: 12946860.00 ppb'
+    - 'VOC: 0.50 ppm'
+    - 'CO2: 500.00 ppm'
+    - 'acceleration: 0.09_-0.07_-0.98 v3'
