@@ -12,6 +12,7 @@ public class SensorInstance : MonoBehaviour
     void Start()
     {
         sensorData.SubscribeListeners();
+        
         mqttSubscriber.sensorDataObjects.Add(sensorData); // Add this sensor data object to the list of sensor data objects in the readings subscriber
 
 
@@ -20,6 +21,6 @@ public class SensorInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(sensorData.SensorName);
+        
     }
 }
