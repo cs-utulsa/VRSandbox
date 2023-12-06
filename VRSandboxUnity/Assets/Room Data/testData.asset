@@ -12,36 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc69a61db44b76541b138972ae1cd607, type: 3}
   m_Name: testData
   m_EditorClassIdentifier: 
-  SensorType: 0
-  SensorName: G1XE
+  SensorName: B35T
   numValuesStored: 30
   SensorDataValues:
-    _value:
-    - 'temperature: 30.48 celsius'
-    - 'humidity: 19 percent'
-    - 'pressure: 99 hectopascal'
-    - 'gas_resistor: 12917167.00 ppb'
-    - 'VOC: 0.50 ppm'
-    - 'CO2: 500.00 ppm'
-    - 'acceleration: -0.33_0.02_0.96 v3'
-    - 'temperature: 30.48 celsius'
-    - 'humidity: 19 percent'
-    - 'pressure: 99 hectopascal'
-    - 'gas_resistor: 12917167.00 ppb'
-    - 'VOC: 0.50 ppm'
-    - 'CO2: 500.00 ppm'
-    - 'acceleration: -0.33_0.02_0.96 v3'
-    - 'temperature: 30.48 celsius'
-    - 'humidity: 19 percent'
-    - 'pressure: 99 hectopascal'
-    - 'gas_resistor: 12917167.00 ppb'
-    - 'VOC: 0.50 ppm'
-    - 'CO2: 500.00 ppm'
-    - 'acceleration: -0.33_0.02_0.96 v3'
-    - 'temperature: 30.47 celsius'
-    - 'humidity: 19 percent'
-    - 'pressure: 99 hectopascal'
-    - 'gas_resistor: 12917167.00 ppb'
-    - 'VOC: 0.50 ppm'
-    - 'CO2: 500.00 ppm'
-    - 'acceleration: -0.33_0.02_0.96 v3'
+    _value: []

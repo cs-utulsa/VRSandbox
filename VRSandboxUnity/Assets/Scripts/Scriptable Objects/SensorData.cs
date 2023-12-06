@@ -6,19 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Sensor Data")]
 public class SensorData : ScriptableObject
 {
-    public enum SensorTypes
-    {
-        temperature,
-        humidity,
-        pressure,
-        motion
-    }
 
-
-    /// <summary>
-    /// Type of this sensor
-    /// </summary>
-    public SensorTypes SensorType;
     /// <summary>
     /// Unique Identifier of this sensor
     /// </summary>

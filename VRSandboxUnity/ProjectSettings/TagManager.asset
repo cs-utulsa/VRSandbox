@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerSpawn
+  - Zone Graph
   layers:
   - Default
   - TransparentFX
