@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using Newtonsoft.Json;
+using TMPro;
 
 public class SensorDataImport : MonoBehaviour
 {
@@ -34,10 +35,16 @@ public class SensorDataImport : MonoBehaviour
                 Debug.LogError("Something went wrong: " + getRequest.error);
                 break;
         }
-        Root deserializedData = JsonUtility.FromJson<Root>(getRequest.downloadHandler.text);
+        Root deserializedData = JsonConvert.DeserializeObject<Root>(getRequest.downloadHandler.text);
         //Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
         print("Raw Data: "+getRequest.downloadHandler.text);
-        print("Deserialized Data: "+deserializedData);
+        List<Payload> currentPayload = deserializedData.getPayload();
+
+        for(int i = 0;i<currentPayload.Count;i++)
+        {
+            print("Deserialized Data "+i+": " + currentPayload[i].PayloadString());
+        }
+        print("Deserialized Data: "+ currentPayload[0].PayloadString());
 
         cert?.Dispose();
 
@@ -84,6 +91,11 @@ public class Todo
 public class HardwareInfo
 {
     public string sensor_id;
+
+    public string GetSensorID()
+    {
+        return sensor_id;
+    }
 }
 
 public class Payload
@@ -98,6 +110,22 @@ public class Payload
     public object reading_val;
     public string reading_val_type;
     public string zone_id;
+
+    public string PayloadString()
+    {
+        string myString =
+            "\nZone_id: " + zone_id +
+            "\nCollector_id: " + collector_id +
+            "\nSensor_id: " + hardware_info.GetSensorID() +
+            "\nReading_Time: " + reading_time +
+            "\nReading_Type: " + reading_type +
+            "\nReading_Unit: " + reading_unit +
+            "\nReading_Value: " + reading_val +
+            "\nReading_Value_Type: " + reading_val_type;
+        return myString;
+    }
+
+
 }
 
 public class Root
@@ -105,6 +133,11 @@ public class Root
     public List<Payload> payload;
     public int status_code;
     public string success;
+
+    public List<Payload> getPayload()
+    {
+        return payload;
+    }
 }
 
 public class ForceAcceptAll : CertificateHandler
