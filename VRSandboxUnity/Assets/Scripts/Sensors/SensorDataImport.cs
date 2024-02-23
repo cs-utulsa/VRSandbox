@@ -8,18 +8,31 @@ using TMPro;
 
 public class SensorDataImport : MonoBehaviour
 {
-    
+    private List<string> Requests =new List<string>();
+    private List<Payload> AllPayloads = new List<Payload>();
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(MakeRequest());
+        Requests.Add("https://129.244.254.218/api/search/historical/readings?min_reading_time=2024-01-31T12:29:54-06:30&max_reading_time=2024-01-31T12:30:00-06:30&sensor_id=G1XE");
+        Requests.Add("https://129.244.254.218/api/search/historical/readings?min_reading_time=2024-01-31T12:29:45-06:30&max_reading_time=2024-01-31T12:29:53-06:30&sensor_id=G1XE");
+        
+        for(int i = 0; i < Requests.Count; i++) 
+        {
+            StartCoroutine(MakeRequest(Requests[i]));
+        }
+        print(AllPayloads.Count);
+
+        for (int i = 0; i < AllPayloads.Count; i++)
+        {
+            print("Deserialized Data " + i + ": " + AllPayloads[i].PayloadString());
+        }
     }
 
-    private IEnumerator MakeRequest()
+    private IEnumerator MakeRequest(string path)
     {
         //Link
-        var getRequest = CreateRequest("https://129.244.254.218/api/search/historical/readings?min_reading_time=2024-01-31T12:29:54-06:30&max_reading_time=2024-01-31T12:30:00-06:30&sensor_id=G1XE");
+        var getRequest = CreateRequest(path);
 
         //forces Unity to accept certification
         var cert = new ForceAcceptAll();
@@ -36,15 +49,17 @@ public class SensorDataImport : MonoBehaviour
                 break;
         }
         Root deserializedData = JsonConvert.DeserializeObject<Root>(getRequest.downloadHandler.text);
-        //Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-        print("Raw Data: "+getRequest.downloadHandler.text);
+        //print("Raw Data: "+getRequest.downloadHandler.text);
         List<Payload> currentPayload = deserializedData.getPayload();
-
+        
         for(int i = 0;i<currentPayload.Count;i++)
         {
-            print("Deserialized Data "+i+": " + currentPayload[i].PayloadString());
+            print("Deserialized Data V1 "+i+": " + currentPayload[i].PayloadString());
         }
-        print("Deserialized Data: "+ currentPayload[0].PayloadString());
+        
+
+        AllPayloads.AddRange(currentPayload);
+        //print("Deserialized Data: "+ currentPayload[0].PayloadString());
 
         cert?.Dispose();
 
@@ -80,14 +95,7 @@ public class SensorDataImport : MonoBehaviour
     }
 }
 
-public class Todo
-{
-    public string sensor_id;
-    public string reading_time;
-    public string reading_val;
-}
 
-// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
 public class HardwareInfo
 {
     public string sensor_id;
